@@ -91,7 +91,16 @@ Top Tested Concepts:
 1. Newton's Laws (23%)  
 2. Thermodynamics (18%)
 
+## 🔄 Workflow Diagram
 
+```mermaid
+graph TD
+    A[Question] --> B{Simple?}
+    B -->|Yes| C[Quick Keyword Check]
+    B -->|No| D[Ask AI]
+    C --> E[Save Result]
+    D --> E
+```
 
 Install requirements
    pip install -r requirements.txt
