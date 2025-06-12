@@ -216,7 +216,7 @@ Top Tested Concepts:
 2. Thermodynamics (18%)
 
 ## 🔄 Workflow Diagram
-```
+
 ```mermaid
 graph TD
     A[Question] --> B{Simple?}
@@ -225,15 +225,19 @@ graph TD
     C --> E[Save Result]
     D --> E
 
-```
+
 Install requirements
+```
+```
    pip install -r requirements.txt
 ```
 ```
+
 Add API key to .env file
 RUn the program
-   python main.py --subject=ancient_history --use-api
 ```
+```
+   python main.py --subject=ancient_history --use-api
 ```
 ```
 Project Structure
