@@ -101,14 +101,15 @@ graph TD
     C --> E[Save Result]
     D --> E
 ```
-
+```
 Install requirements
    pip install -r requirements.txt
-
+```
+```
 Add API key to .env file
 RUn the program
    python main.py --subject=ancient_history --use-api
-
+```
 Project Structure
 MapitaiProject/
 ├── resources/
