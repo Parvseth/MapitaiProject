@@ -45,12 +45,9 @@ def get_comprehensive_keyword_dictionary():
     - Subject-specific disambiguation
     """
 Technical Innovations:
-
-Concept normalization: "rigveda" → "Vedic Literature"
-
-Polysemy handling: "function" interpreted differently in Math vs Physics
-
-Weighted keyword scoring for more accurate subject detection
+    Concept normalization: "rigveda" → "Vedic Literature"
+    Polysemy handling: "function" interpreted differently in Math vs Physics
+    Weighted keyword scoring for more accurate subject detection
 
 2. ⚙️ Extraction Pipeline
     def extract_concepts_from_question(question_text, subject, use_api=False):
@@ -64,9 +61,7 @@ Weighted keyword scoring for more accurate subject detection
 Optimizations:
 
 Adaptive chunking for large questions
-
 API timeout fallback (default 3s)
-
 Context-aware stopword filtering
 
 3. 🤖 LLM Integration Framework
@@ -86,14 +81,12 @@ Input: "Explain Ashoka's Dhamma policy"
 → Output: "Mauryan Empire; Buddhist Philosophy"
 
 🚀 Usage Scenarios
+
 📦 Case 1: Bulk Processing
 python main.py --subject=physics
 Processes all physics.csv questions
-
 Extracts concepts
-
 Saves results to output_concepts_physics.csv
-
 Compatible with both LLM and keyword modes
 
 🧪 Case 2: Interactive Debugging
@@ -102,12 +95,12 @@ python main.py --interactive
 Detected subject: economics
 Concepts: Game Theory; Microeconomics
 Saved to file!
+
 🧠 Case 3: LLM API Benchmarking
 python main.py --subject=math --use-api --analyze
+
 Benchmarks LLM vs keyword extraction
-
 Prints concept accuracy metrics
-
 Saves precision/recall reports
 
 📊 Analytics Output Example
@@ -116,28 +109,40 @@ Top Tested Concepts:
 2. GDP (18%)
 3. Inflation (15%)
 🔌 Integration Guide
+
 Step 1: Setup Environment
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY='your_key'
+
 Step 2: Connect to LLMs
 In llm_api.py:
 def call_llm(prompt):
     # Supports OpenAI, Anthropic, Gemini
     return custom_provider(prompt)
+
 🧰 File Organization
-.
-├── main.py                     # Entry point
-├── keyword_engine.py          # Fast extraction logic
-├── llm_api.py                 # API-based extraction (LLMs)
-├── data/
-│   ├── math.csv               # Subject-wise input data
-│   ├── history.csv
-│   └── ...
-├── output/
+MapitaiProject/
+├── resources/
+│   ├── ancient_history.csv
+│   ├── economics.csv
+│   ├── math.csv
+│   ├── physics.csv
+│   ├── extracted_concepts_ancient_history.csv
+│   ├── extracted_concepts_economics.csv
+│   ├── extracted_concepts_math.csv
+│   ├── extracted_concepts_physics.csv
+│   ├── output_concepts_ancient_history.csv
+│   ├── output_concepts_economics.csv
 │   ├── output_concepts_math.csv
-│   └── ...
-└── utils/
-    └── analysis.py            # Stats + frequency visualizations
+│   └── output_concepts_physics.csv
+├── .env
+├── .gitignore
+├── csv_reader.py
+├── llm_api.py
+├── main.py
+├── Makefile
+├── README.md
+└── requirements.txt
 🧑‍🏫 Why Use This?
 🎓 For Students: Know what topics to focus on
 
