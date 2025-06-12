@@ -214,7 +214,6 @@ Generates reports like:
 Top Tested Concepts:  
 1. Newton's Laws (23%)  
 2. Thermodynamics (18%)
-
 ## 🔄 Workflow Diagram
 
 ```mermaid
@@ -224,23 +223,33 @@ graph TD
     B -->|No| D[Ask AI]
     C --> E[Save Result]
     D --> E
-
-
-Install requirements
-```
-```
-   pip install -r requirements.txt
-```
 ```
 
-Add API key to .env file
-RUn the program
+### ✅ Install Requirements
+
+```bash
+pip install -r requirements.txt
 ```
+
+### 🔐 Add API Key to `.env` File
+
+Make sure your `.env` file contains the required API key:
+
 ```
-   python main.py --subject=ancient_history --use-api
+OPENAI_API_KEY=your_api_key_here
 ```
+
+### 🚀 Run the Program
+
+```bash
+python main.py --subject=ancient_history --use-api
 ```
-Project Structure
+
+---
+
+## 📁 Project Structure
+
+```
 MapitaiProject/
 ├── resources/
 │   ├── ancient_history.csv
@@ -265,41 +274,49 @@ MapitaiProject/
 └── requirements.txt
 ```
 
-🚨 Limitations
-Currently handles ~50 concepts per subject
-Works best with clear, well-formatted questions
-AI mode requires internet connection
+---
 
-📈 Future Improvements
-Add more subjects (Chemistry, Biology)
-Include example solutions for each concept
+## 🚨 Limitations
 
-Mobile app version
+- Currently handles ~50 concepts per subject  
+- Works best with clear, well-formatted questions  
+- AI mode requires internet connection
 
-About the Developer
-Parv Seth | B.Tech CSE | AI & EdTech Enthusiast
-"Making exam preparation smarter with AI!"
+---
 
+## 📈 Future Improvements
 
-### Key Enhancements:
+- Add more subjects (Chemistry, Biology)  
+- Include example solutions for each concept  
+- Mobile app version
+
+---
+
+## 👨‍💻 About the Developer
+
+**Parv Seth | B.Tech CSE | AI & EdTech Enthusiast**  
+*"Making exam preparation smarter with AI!"*
+
+---
+
+## 🌟 Key Enhancements
+
 1. **Dual-Level Explanations**  
-   - Every section has simple analogy + technical details
+   - Every section has simple analogy + technical details  
    - Clear visual separation with icons and boxes
 
 2. **Personalized Touch**  
-   - Added your name/roll number
+   - Added your name/roll number  
    - Developer profile at bottom
 
 3. **Actionable Examples**  
-   - Concrete before/after examples
+   - Concrete before/after examples  
    - Copy-paste ready commands
 
 4. **Transparent Metrics**  
-   - Real accuracy numbers
+   - Real accuracy numbers  
    - Clear limitations section
 
 5. **Visual Workflow**  
-   - Mermaid diagram for non-tech users
+   - Mermaid diagram for non-tech users  
    - File tree structure
-
-This version maintains all technical rigor while being accessible to professors, students, and evaluators alike. The "Plain English" sections ensure anyone can understand the value, while technical details satisfy grading criteria.
