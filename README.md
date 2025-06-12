@@ -170,15 +170,16 @@ INTERACTIVE OUTPUT WITH A PREVIOUSLY ASKED QUESTION FROM THE GIVEN DATABASE : th
       
    ```
    ```
-5. **AI Brain** (Smart Mode)  
+4. AI Brain (Smart Mode)  
    - Uses Anthropic Claude AI for complex questions  
-   - Asks AI: *"What concepts does this Physics question test?"*  
+   - Asks AI: "Give me the: key historical, cultural, or subject-related concepts present in the following question. Focus only on named entities, terminology, historical references, philosophical ideas, or subject-matter concepts that the question is testing knowledge of"
 
-6. **Safety Net**  
+5. Safety Net  
    - If AI fails, automatically switches to keyword mode  
 ```
 ```
 ### 📂 File Structure  
+```
 your_project/
 ├── main.py ← Main control center
 ├── llm_api.py ← Where AI magic happens
@@ -215,7 +216,7 @@ Top Tested Concepts:
 2. Thermodynamics (18%)
 
 ## 🔄 Workflow Diagram
-
+```
 ```mermaid
 graph TD
     A[Question] --> B{Simple?}
@@ -223,7 +224,7 @@ graph TD
     B -->|No| D[Ask AI]
     C --> E[Save Result]
     D --> E
-```
+
 ```
 Install requirements
    pip install -r requirements.txt
@@ -232,6 +233,7 @@ Install requirements
 Add API key to .env file
 RUn the program
    python main.py --subject=ancient_history --use-api
+```
 ```
 ```
 Project Structure
