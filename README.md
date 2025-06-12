@@ -143,22 +143,17 @@ MapitaiProject/
 ├── Makefile
 ├── README.md
 └── requirements.txt
+
+
 🧑‍🏫 Why Use This?
 🎓 For Students: Know what topics to focus on
-
 👩‍🏫 For Teachers: Track the most tested concepts
-
 🧾 For Institutions: Build smart, topic-wise question banks
-
 🤯 For AI Devs: Blend deterministic NLP + generative AI
 
 ✅ Summary
 This is like having a super-smart teaching assistant that:
-
 Reads all your exam questions
-
 Detects which topics they test
-
 Saves them in a clean, organized format
-
 Generates insights, topic trends, and even uses AI when needed!
