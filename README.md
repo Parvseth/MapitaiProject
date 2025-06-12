@@ -5,6 +5,8 @@
 A powerful tool that reads exam questions and automatically identifies key academic **concepts**. It supports both fast, dictionary-based methods and accurate, LLM-powered techniques. Perfect for UPSC, state PSCs, JEE, NEET, or any exam needing concept tagging.
 
 ---
+### Prompt Used for testing : 
+Give me the: key historical, cultural, or subject-related concepts present in the following question. Focus only on named entities, terminology, historical references, philosophical ideas, or subject-matter concepts that the question is testing knowledge of
 
 ## 📖 Overview
 
