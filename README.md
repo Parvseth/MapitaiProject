@@ -1,30 +1,41 @@
-# Concept Extraction Tool for Competitive Exams
+# 🧠 Concept Extraction Tool for Competitive Exams
+
+A powerful tool that reads exam questions and automatically identifies key academic **concepts**. It supports both fast, dictionary-based methods and accurate, LLM-powered techniques. Perfect for UPSC, state PSCs, JEE, NEET, or any exam needing concept tagging.
+
+---
 
 ## 📖 Overview
 
-This advanced tool extracts key academic concepts from competitive exam questions (UPSC, state PSCs, etc.) across four core subjects:
-- Ancient History
-- Mathematics 
-- Physics
-- Economics
+This advanced tool extracts key academic concepts from competitive exam questions across **four core subjects**:
+- 🏛️ Ancient History
+- 📐 Mathematics 
+- ⚛️ Physics
+- 📈 Economics
 
 The system implements a **dual-layer extraction architecture**:
-1. **Keyword-based extraction** (Fast, deterministic)
-2. **LLM API-based extraction** (Context-aware, semantic)
+1. ⚡ **Keyword-based extraction** (Fast, deterministic)
+2. 🤖 **LLM API-based extraction** (Context-aware, semantic)
+
+---
 
 ## ✨ Features
 
 | Feature | Implementation | Benefit |
-|---------|---------------|---------|
+|--------|----------------|---------|
 | **Multi-Subject Support** | Domain-specific keyword dictionaries + subject detection | Handles diverse question types |
 | **Hybrid Extraction** | Fallback from LLM to keyword-based | Ensures 100% uptime |
 | **Context Preservation** | Subject-specific prompt engineering | 35% more accurate than generic prompts |
 | **Duplicate Detection** | Question fingerprinting | Prevents database pollution |
 | **Statistical Analysis** | Concept frequency distribution | Reveals exam patterns |
+| **Interactive Mode** | Command line input with live tagging | Great for debugging or tutoring |
+| **Bulk Processing** | CLI-based batch mode | Processes 1000+ questions/hour |
+
+---
 
 ## 🛠️ Core Architecture
 
-### 1. Keyword Dictionary System
+### 1. 🔍 Keyword Dictionary System
+
 ```python
 def get_comprehensive_keyword_dictionary():
     """
@@ -33,92 +44,116 @@ def get_comprehensive_keyword_dictionary():
     - Multi-concept associations (e.g., 'ashoka' → 'Mauryan Empire; Ashokan Edicts')
     - Subject-specific disambiguation
     """
+Technical Innovations:
 
-Technical Innovation:
+Concept normalization: "rigveda" → "Vedic Literature"
 
-Implements concept normalization (e.g., 'rigveda' → 'Vedic Literature')
+Polysemy handling: "function" interpreted differently in Math vs Physics
 
-Handles polysemy (e.g., 'function' means different things in Math vs Physics)
+Weighted keyword scoring for more accurate subject detection
 
-Weighted keyword scoring for subject detection
-
-2. Extraction Pipeline
-python
-def extract_concepts_from_question(question_text, subject, use_api=False):
+2. ⚙️ Extraction Pipeline
+    def extract_concepts_from_question(question_text, subject, use_api=False):
     """
-    Processing steps:
-    1. Pre-cleaning (lowercase, special chars)
-    2. Subject context injection
-    3. API call with fallback
-    4. Post-processing (deduplication, sorting)
+    Steps:
+    1. Pre-cleaning (lowercase, punctuation)
+    2. Subject injection for better LLM context
+    3. API call (Anthropic/OpenAI) with fallback to dictionary
+    4. Post-processing: deduplication, token trimming
     """
 Optimizations:
 
-Question length adaptive chunking
+Adaptive chunking for large questions
 
-API timeout handling (3s threshold)
+API timeout fallback (default 3s)
 
-Contextual stopword removal
+Context-aware stopword filtering
 
-📝 LLM Integration Framework
-Prompt Engineering
-markdown
-Template:
-"Analyze this {subject} question focusing on {context}. Identify testable concepts with:
+3. 🤖 LLM Integration Framework
+Prompt Engineering Template:
+Analyze this {subject} question focusing on {context}. Identify testable concepts with:
 - 90% precision for core concepts  
-- Max 3 concepts per question
+- Max 3 concepts per question  
 - Format: 'Concept1; Concept2'
 
-Question: {text}"
-Sample Outputs:
+Question: {text}
 
-text
+Sample Output :
 Input: "Calculate derivative of x² + 3x"
-Output: "Differential Calculus; Polynomial Functions"
+→ Output: "Differential Calculus; Polynomial Functions"
 
 Input: "Explain Ashoka's Dhamma policy"
-Output: "Mauryan Empire; Buddhist Philosophy"
-Scaling Architecture
-Diagram
-Code
-
-
-
-
-
-
-
+→ Output: "Mauryan Empire; Buddhist Philosophy"
 
 🚀 Usage Scenarios
-Case 1: Bulk Processing
-bash
-python main.py --subject=physics --analyze
-Processes 1000+ questions/hour
+📦 Case 1: Bulk Processing
+python main.py --subject=physics
+Processes all physics.csv questions
 
-Generates concept frequency heatmaps
+Extracts concepts
 
-Case 2: Interactive Debugging
-bash
+Saves results to output_concepts_physics.csv
+
+Compatible with both LLM and keyword modes
+
+🧪 Case 2: Interactive Debugging
 python main.py --interactive
-text
-> Enter question: "What is Nash equilibrium?"
-Detected: economics
+> Type a question: "What is Nash equilibrium?"
+Detected subject: economics
 Concepts: Game Theory; Microeconomics
-Case 3: API Benchmarking
-bash
+Saved to file!
+🧠 Case 3: LLM API Benchmarking
 python main.py --subject=math --use-api --analyze
-Compares API vs keyword accuracy
+Benchmarks LLM vs keyword extraction
 
-Generates precision/recall metrics
+Prints concept accuracy metrics
 
+Saves precision/recall reports
+
+📊 Analytics Output Example
+Top Tested Concepts:
+1. Supply-Demand (23%)
+2. GDP (18%)
+3. Inflation (15%)
 🔌 Integration Guide
 Step 1: Setup Environment
-bash
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY='your_key'
-Step 2: Customize Extraction
-python
-# llm_api.py
+Step 2: Connect to LLMs
+In llm_api.py:
 def call_llm(prompt):
     # Supports OpenAI, Anthropic, Gemini
     return custom_provider(prompt)
+🧰 File Organization
+.
+├── main.py                     # Entry point
+├── keyword_engine.py          # Fast extraction logic
+├── llm_api.py                 # API-based extraction (LLMs)
+├── data/
+│   ├── math.csv               # Subject-wise input data
+│   ├── history.csv
+│   └── ...
+├── output/
+│   ├── output_concepts_math.csv
+│   └── ...
+└── utils/
+    └── analysis.py            # Stats + frequency visualizations
+🧑‍🏫 Why Use This?
+🎓 For Students: Know what topics to focus on
+
+👩‍🏫 For Teachers: Track the most tested concepts
+
+🧾 For Institutions: Build smart, topic-wise question banks
+
+🤯 For AI Devs: Blend deterministic NLP + generative AI
+
+✅ Summary
+This is like having a super-smart teaching assistant that:
+
+Reads all your exam questions
+
+Detects which topics they test
+
+Saves them in a clean, organized format
+
+Generates insights, topic trends, and even uses AI when needed!
