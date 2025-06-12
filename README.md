@@ -91,7 +91,9 @@ Top Tested Concepts:
 1. Newton's Laws (23%)  
 2. Thermodynamics (18%)
 
-🔄 Workflow Diagram
+## 🔄 Workflow Diagram
+
+```mermaid
 graph TD
     A[Question] --> B{Simple?}
     B -->|Yes| C[Quick Keyword Check]
@@ -101,13 +103,12 @@ graph TD
 
 🧩 Installation
 Install requirements:
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 Add API key to .env file
-Run with:
-python main.py --subject=ancient_history --use-api
+   python main.py --subject=ancient_history --use-api
 
-Project Structure : 
+📁 Project Structure
 MapitaiProject/
 ├── resources/
 │   ├── ancient_history.csv
@@ -130,7 +131,6 @@ MapitaiProject/
 ├── Makefile
 ├── README.md
 └── requirements.txt
-
 
 🚨 Limitations
 Currently handles ~50 concepts per subject
