@@ -74,13 +74,14 @@ your_project/
 Get output_concepts.csv with all topics identified
 
 For Developers
+```
 # Want to use OpenAI instead? Just edit:
 def call_llm(prompt):
     return openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role":"user","content":prompt}]
     )
-    
+``` 
 💡 Why This Stands Out
 For Students
 Shows which topics appear most often in past exams
