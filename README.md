@@ -101,14 +101,14 @@ graph TD
     C --> E[Save Result]
     D --> E
 
-Installation
-Install requirements 
+Install requirements
    pip install -r requirements.txt
 
 Add API key to .env file
+RUn the program
    python main.py --subject=ancient_history --use-api
 
-📁 Project Structure
+Project Structure
 MapitaiProject/
 ├── resources/
 │   ├── ancient_history.csv
@@ -131,6 +131,7 @@ MapitaiProject/
 ├── Makefile
 ├── README.md
 └── requirements.txt
+
 
 🚨 Limitations
 Currently handles ~50 concepts per subject
