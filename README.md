@@ -69,6 +69,22 @@ python main.py --interactive --subject=ancient_history
 
 3. **Examples of outputs**
    ```
+   CONCEPT EXTRACTION FROM THE INPUT CSV FILE AND OUTPUTS A CSV FILE : (for eg: output_concepts_ancient_history.csv)
+   ```
+   ```
+   (venv) PS D:\mapitai\concept_extractor> python main.py --subject=ancient_history              
+      🚀 CONCEPT EXTRACTION TOOL
+      Subject: Ancient History
+      Method: Keyword-based
+      ==================================================
+      📚 Loaded 27 questions from ancient_history.csv
+      
+      🔍 Question 1:
+         Consider the following pairs: Historical place Well - known for 1. Burzahom : Rock-cut shrines 2. Ch...       
+         📝 Concepts: Neolithic Settlements; Kashmir Archaeology; Chalcolithic Culture; Copper Artifacts; Material Culture; Art; Chalcolithic Technology
+
+   ```
+   ```
    PS D:\mapitai\concept_extractor> python main.py --subject=physics --analyze
       🚀 CONCEPT EXTRACTION TOOL
       Subject: Physics
@@ -80,7 +96,9 @@ python main.py --interactive --subject=ancient_history
          If the sizes of charged bodies are very small compared to the distances between them, we treat them ...       
           → Detected keywords: tan
          📝 Concepts: Trigonometric Functions
-   and all the 20 questions are shown here similarly .... FOLLOWED BY ANALYSIS
+   
+   ALL THE 20 QUESTIONS ARE SIMILARLY DEALT AND THE ANALYSIS IS DONE
+   
       📊 CONCEPT DISTRIBUTION ANALYSIS - PHYSICS
       ==================================================
       Total unique concepts found: 12
@@ -98,21 +116,11 @@ python main.py --interactive --subject=ancient_history
          • Method: Keyword-based
          💡 Tip: Use --use-api for more accurate concept extraction
    ```
+   
    ```
-   (venv) PS D:\mapitai\concept_extractor> python main.py --subject=ancient_history              
-      🚀 CONCEPT EXTRACTION TOOL
-      Subject: Ancient History
-      Method: Keyword-based
-      ==================================================
-      📚 Loaded 27 questions from ancient_history.csv
-      
-      🔍 Question 1:
-         Consider the following pairs: Historical place Well - known for 1. Burzahom : Rock-cut shrines 2. Ch...       
-         📝 Concepts: Neolithic Settlements; Kashmir Archaeology; Chalcolithic Culture; Copper Artifacts; Material Culture; Art; Chalcolithic Technology
-
+   INTERACTIVE OUTPUT for new questions as input : the question should be in the specified format (as was in the given input csv file) i.e. : "Question","Option A","Option B","Option C","Option D",Ans
    ```
    ```
-   INTERACTIVE OUTPUT
    (venv) PS D:\mapitai\concept_extractor> python main.py --interactive --subject=ancient_history
       🚀 CONCEPT EXTRACTION TOOL
       Subject: Ancient History
