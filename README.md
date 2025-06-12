@@ -50,12 +50,120 @@ This is like a "smart highlighter" for exam questions that:
 1. **Keyword Brain** (Fast Mode)  
    - Uses a dictionary of 50+ important terms  
    - Example: "harappan" → "Indus Valley Civilization"  
+## Usage
 
-2. **AI Brain** (Smart Mode)  
+2. **Basic Usage**
+```bash
+# Process ancient history questions
+python main.py --subject=ancient_history
+
+# Use API for extraction (requires API key)
+python main.py --subject=math --use-api
+
+# Include concept distribution analysis
+python main.py --subject=physics --analyze
+
+#Include interactive mode in which you can add new questions that directly gets added to the output csv file and concepts are also extracted
+python main.py --interactive --subject=ancient_history
+```
+
+3. **Examples of outputs**
+   ```
+   PS D:\mapitai\concept_extractor> python main.py --subject=physics --analyze
+      🚀 CONCEPT EXTRACTION TOOL
+      Subject: Physics
+      Method: Keyword-based
+      ==================================================
+      📚 Loaded 20 questions from physics.csv
+      
+      🔍 Question 1:
+         If the sizes of charged bodies are very small compared to the distances between them, we treat them ...       
+          → Detected keywords: tan
+         📝 Concepts: Trigonometric Functions
+   and all the 20 questions are shown here similarly .... FOLLOWED BY ANALYSIS
+      📊 CONCEPT DISTRIBUTION ANALYSIS - PHYSICS
+      ==================================================
+      Total unique concepts found: 12
+      Top 5 most tested concepts:
+        1. Wave Physics: 4 questions (20.0%)
+        2. Electric Fields and Potential: 3 questions (15.0%)
+        3. Magnetism: 3 questions (15.0%)
+        4. Optics: 3 questions (15.0%)
+        5. Light: 3 questions (15.0%)
+      
+      🎯 PROCESSING COMPLETE!
+         • Processed: 20 questions
+         • Subject: physics
+         • Output: output_concepts_physics.csv
+         • Method: Keyword-based
+         💡 Tip: Use --use-api for more accurate concept extraction
+   ```
+   ```
+   (venv) PS D:\mapitai\concept_extractor> python main.py --subject=ancient_history              
+      🚀 CONCEPT EXTRACTION TOOL
+      Subject: Ancient History
+      Method: Keyword-based
+      ==================================================
+      📚 Loaded 27 questions from ancient_history.csv
+      
+      🔍 Question 1:
+         Consider the following pairs: Historical place Well - known for 1. Burzahom : Rock-cut shrines 2. Ch...       
+         📝 Concepts: Neolithic Settlements; Kashmir Archaeology; Chalcolithic Culture; Copper Artifacts; Material Culture; Art; Chalcolithic Technology
+
+   ```
+   ```
+   INTERACTIVE OUTPUT
+   (venv) PS D:\mapitai\concept_extractor> python main.py --interactive --subject=ancient_history
+      🚀 CONCEPT EXTRACTION TOOL
+      Subject: Ancient History
+      Method: Keyword-based
+      ==================================================
+      🎯 INTERACTIVE CONCEPT EXTRACTION MODE
+      Enter complete questions in this format (or 'quit' to exit):
+      Question,Option A,Option B,Option C,Option D,Ans.?
+      Example:
+      "What was the capital of Magadha?","Patliputra","Taxila","Ujjain","Kashi",A
+      
+      --------------------------------------------------
+      📝 Enter question with options: "Which of the following statements about Emperor Ashoka is correct?","Ashoka was the first ruler to unify the entire Indian subcontinent under one empire","Ashoka adopted Jainism after the Kalinga war","The Edicts of Ashoka were written exclusively in Sanskrit","Ashoka never established diplomatic relations with foreign countries",A   
+      
+      🔍 Detected subject: Ancient History
+      
+      🔍 Analyzing question...
+      ✅ Extracted Concepts: Mauryan Empire; Ashokan Edicts; Political History; Jainism; Mauryan Inscriptions
+      📁 Saved as Question 29 in output_concepts_ancient_history.csv
+      
+      --------------------------------------------------
+      📝 Enter question with options:
+```
+INTERACTIVE OUTPUT WITH A PREVIOUSLY ASKED QUESTION FROM THE GIVEN DATABASE : the new question and concept doesnt get saved , because same question already exists
+```
+      (venv) PS D:\mapitai\concept_extractor> python main.py --interactive --subject=ancient_history
+         🚀 CONCEPT EXTRACTION TOOL
+         Subject: Ancient History
+         Method: Keyword-based
+         ==================================================
+         🎯 INTERACTIVE CONCEPT EXTRACTION MODE
+         Enter complete questions in this format (or 'quit' to exit):
+         Question,Option A,Option B,Option C,Option D,Ans.?
+         Example:
+         "What was the capital of Magadha?","Patliputra","Taxila","Ujjain","Kashi",A
+         
+         --------------------------------------------------
+         📝 Enter question with options: "With reference to the difference between the culture of Rigvedic Aryans and Indus Valley people, which of the following statements is/are correct? 1. Rigvedic Aryans used the coat of mail and helmet in warfare whereas the people of the Indus Valley Civilization did not leave any evidence of using them. 2. Rigvedic Aryans knew gold, silver and copper whereas Indus Valley people knew only copper and iron. 3. Rigvedic Aryans had domesticated the horse whereas there is no evidence of Indus Valley people having been aware of this animal. Select the correct answer using the code given below:",1 only,2 and 3 only,1 and 3 only,"1, 2 and 3",C
+         
+         🔍 Detected subject: Ancient History
+         ⏭️  Duplicate question detected - skipping save
+         --------------------------------------------------
+         📝 Enter question with options:
+      
+   ```
+   
+5. **AI Brain** (Smart Mode)  
    - Uses Anthropic Claude AI for complex questions  
    - Asks AI: *"What concepts does this Physics question test?"*  
 
-3. **Safety Net**  
+6. **Safety Net**  
    - If AI fails, automatically switches to keyword mode  
 ```
 ### 📂 File Structure  
