@@ -34,6 +34,19 @@ The system implements a **dual-layer extraction architecture**:
 
 ## 🛠️ Core Architecture
 
+## 🧪 Evaluation Benchmarking
+
+### 1. Thought Process Validation
+- **Architecture Diagram**:
+  ```mermaid
+  graph LR
+    A[Question] --> B{Length < 50 words?}
+    B -->|Yes| C[Keyword Extraction]
+    B -->|No| D[LLM Analysis]
+    C --> E[Result Validation]
+    D --> E
+    E --> F[Statistical Analysis]
+
 ### 1. 🔍 Keyword Dictionary System
 
 ```python
