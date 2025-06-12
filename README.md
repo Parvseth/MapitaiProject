@@ -110,6 +110,7 @@ Add API key to .env file
 RUn the program
    python main.py --subject=ancient_history --use-api
 ```
+```
 Project Structure
 MapitaiProject/
 ├── resources/
@@ -133,7 +134,7 @@ MapitaiProject/
 ├── Makefile
 ├── README.md
 └── requirements.txt
-
+```
 
 🚨 Limitations
 Currently handles ~50 concepts per subject
