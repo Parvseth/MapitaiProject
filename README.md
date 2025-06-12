@@ -101,7 +101,7 @@ graph TD
     C --> E[Save Result]
     D --> E
 
-🧩 Installation
+Installation
 Install requirements:
    pip install -r requirements.txt
 
