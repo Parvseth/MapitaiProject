@@ -102,11 +102,11 @@ graph TD
     D --> E
 
 Installation
-Install requirements:
-   pip install -r requirements.txt
+Install requirements : 
+pip install -r requirements.txt
 
 Add API key to .env file
-   python main.py --subject=ancient_history --use-api
+python main.py --subject=ancient_history --use-api
 
 📁 Project Structure
 MapitaiProject/
