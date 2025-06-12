@@ -169,13 +169,14 @@ INTERACTIVE OUTPUT WITH A PREVIOUSLY ASKED QUESTION FROM THE GIVEN DATABASE : th
          📝 Enter question with options:
       
    ```
-   
+   ```
 5. **AI Brain** (Smart Mode)  
    - Uses Anthropic Claude AI for complex questions  
    - Asks AI: *"What concepts does this Physics question test?"*  
 
 6. **Safety Net**  
    - If AI fails, automatically switches to keyword mode  
+```
 ```
 ### 📂 File Structure  
 your_project/
