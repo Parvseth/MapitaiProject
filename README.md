@@ -85,6 +85,9 @@ python main.py --interactive --subject=ancient_history
 
    ```
    ```
+   ANALYSE THE QUESTION SET ON THE BASIS OF CONCEPTS EXTRACTED FROM THE DATABASE QUESTIONS
+   ```
+   ```
    PS D:\mapitai\concept_extractor> python main.py --subject=physics --analyze
       🚀 CONCEPT EXTRACTION TOOL
       Subject: Physics
